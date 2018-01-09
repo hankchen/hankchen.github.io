@@ -2,7 +2,7 @@
 <html lang="chinese (simplified)">
 <head>
         <meta charset="utf-8" />
-        <title>从心出发 - 日常速记</title>
+        <title>使用pelican发布博客流程</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -14,13 +14,18 @@
         <header id="banner" class="body">
                 <h1><a href="/">从心出发 </a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/ri-chang-su-ji.html">日常速记</a></li>
+                    <li class="active"><a href="/category/ji-zhu-sui-bi.html">技术随笔</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/shi-yong-pelicanfa-bu-bo-ke-liu-cheng.html" rel="bookmark"
+           title="Permalink to 使用pelican发布博客流程">使用pelican发布博客流程</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/.html"></a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-01-01T00:00:00+08:00">
                 Published: 周一 01 一月 2018
@@ -29,10 +34,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/hank.html">hank</a>
         </address>
-<p>In <a href="/category/ri-chang-su-ji.html">日常速记</a>.</p>
+<p>In <a href="/category/ji-zhu-sui-bi.html">技术随笔</a>.</p>
 
-</footer><!-- /.post-info --><h2>使用pelican发布博客流程</h2>
-<h3>1.激活pelican虚拟环境</h3>
+</footer><!-- /.post-info -->      <h3>1.激活pelican虚拟环境</h3>
 <blockquote>
 <p><code>activate pelican</code></p>
 </blockquote>
@@ -46,31 +50,33 @@
 </blockquote>
 <h3>4. 本地预览</h3>
 <blockquote>
-<p><code>make serve</code><br/>
-可打开浏览器 localhost:8000进行预览</p>
+<p><code>make serve</code></p>
+<p>可打开浏览器 localhost:8000进行预览</p>
 </blockquote>
 <h2>上传至git</h2>
 <h3>初次提交</h3>
 <blockquote>
-<p>git init<br/>
-git add .<br/>
-git commit -m "first commit"<br/>
-git remote add origin https://github.com/xxx/xxx.github.io.git<br/>
-git push -u origin master<br/></p>
+<p>git init<br/></p>
+<p>git add .<br/></p>
+<p>git commit -m "first commit"</p>
+<p>git remote add origin https://github.com/xxx/xxx.github.io.git</p>
+<p>git push -u origin master</p>
 </blockquote>
 <h3>修改makefile简化发布流程</h3>
 <ul>
-<li>修改github: publish下的代码：<blockquote>
+<li>修改github: publish下的代码：</li>
+</ul>
+<blockquote>
 <p><code>cd $(OUTPUTDIR) ; git add ./out ;  git commit -m '更新博客' ; git push origin master</code></p>
 </blockquote>
-</li>
-<li>修改publish:<blockquote>
-<p><code>$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)</code> <br/>
-为: <br/>
-  <code>$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)</code> <br/></p>
-</blockquote>
-</li>
+<ul>
+<li>修改publish:</li>
 </ul>
+<blockquote>
+<p><code>$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)</code> </p>
+<p>为: </p>
+<p><code>$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)</code> </p>
+</blockquote>
 <h3>博客更新</h3>
 <blockquote>
 <p><code>make github</code></p>
@@ -81,8 +87,11 @@ git push -u origin master<br/></p>
 <p>[credential]
     helper = store
 输入一次密码后会保存</p>
-</blockquote>                </article>
-            </aside><!-- /#featured -->
+</blockquote>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
         <section id="extras" class="body">
         </section><!-- /#extras -->
 
