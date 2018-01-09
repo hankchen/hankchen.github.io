@@ -57,18 +57,25 @@
 <h2>上传至git</h2>
 <h3>初次提交</h3>
 <blockquote>
-<p>git init
-git add .
-git commit -m "first commit"
-git remote add origin https://github.com/xxx/xxx.github.io.git
-git push -u origin master</p>
+<p>git init<br/>
+git add .<br/>
+git commit -m "first commit"<br/>
+git remote add origin https://github.com/xxx/xxx.github.io.git<br/>
+git push -u origin master<br/></p>
 </blockquote>
 <h3>修改makefile简化发布流程</h3>
-<p>+修改github: publish下的代码：
-<code>cd $(OUTPUTDIR) ; git add ./out ;  git commit -m '更新博客' ; git push origin master</code>
-+修改publish:
-    <code>$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)</code>
- 为: `$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)``</p>
+<ul>
+<li>修改github: publish下的代码：<blockquote>
+<p><code>cd $(OUTPUTDIR) ; git add ./out ;  git commit -m '更新博客' ; git push origin master</code></p>
+</blockquote>
+</li>
+<li>修改publish:<blockquote>
+<p><code>$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)</code>
+为: 
+  <code>$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)</code></p>
+</blockquote>
+</li>
+</ul>
 <h3>博客更新</h3>
 <blockquote>
 <p><code>make github</code></p>
