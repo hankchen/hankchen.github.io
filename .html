@@ -64,10 +64,11 @@ git remote add origin https://github.com/xxx/xxx.github.io.git
 git push -u origin master</p>
 </blockquote>
 <h3>修改makefile简化发布流程</h3>
-<blockquote>
-<p>修改github: publish下的代码：
-<code>cd $(OUTPUTDIR) ; git add . ;  git commit -m '更新博客' ; git push origin master</code></p>
-</blockquote>
+<p>+修改github: publish下的代码：
+<code>cd $(OUTPUTDIR) ; git add ./out ;  git commit -m '更新博客' ; git push origin master</code>
++修改publish:
+    <code>$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)</code>
+ 为: `$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)``</p>
 <h3>博客更新</h3>
 <blockquote>
 <p><code>make github</code></p>
